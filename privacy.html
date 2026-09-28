@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy · Personally</title>
+    <meta name="description" content="How Personally for Gmail and Personally for Outlook handle your data." />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="icon-64.png" type="image/png" sizes="64x64" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./"><img src="icon.svg" alt="" />Personally</a>
+        <nav>
+          <a href="./#pricing">Pricing</a>
+          <a href="./#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap doc">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: September 28, 2026</p>
+
+      <p class="callout">
+        <strong>The short version:</strong> Personally reads your spreadsheet inside your browser and never uploads it. Your emails go
+        straight from your browser to Google or Microsoft to be delivered. We don't run servers, we don't use analytics or ads, and we
+        don't sell or share your data.
+      </p>
+
+      <p>
+        This policy covers <strong>Personally for Gmail</strong> (a Chrome extension) and <strong>Personally for Outlook</strong> (an
+        Outlook add-in), together "Personally". Personally is made by ACooperDev ("we", "us"). It lets you send a personalized email to
+        each row of an Excel or CSV file from your own email account.
+      </p>
+
+      <h2>What Personally handles, and where it goes</h2>
+      <div class="table-scroll">
+        <table>
+          <tr>
+            <th>Information</th>
+            <th>What happens to it</th>
+          </tr>
+          <tr>
+            <td>Your spreadsheet</td>
+            <td>
+              Read inside your browser and kept in memory while the Personally panel is open. It is never uploaded. Personally for Gmail
+              also saves the spreadsheet's column names in the extension's local storage so the <strong>Merge fields</strong> button in
+              Gmail can list them. They're cleared the next time the panel opens.
+            </td>
+          </tr>
+          <tr>
+            <td>The email you're writing</td>
+            <td>
+              Read from your open draft only when you click <strong>Use my Gmail message</strong> or <strong>Use this message</strong>,
+              and used to build the personalized emails in your browser.
+            </td>
+          </tr>
+          <tr>
+            <td>The personalized emails</td>
+            <td>
+              Sent from your browser to Google (Gmail API) or Microsoft (Microsoft Graph) for delivery. They are stored in your own Sent
+              folder by your email provider, like any email you send. They don't pass through us.
+            </td>
+          </tr>
+          <tr>
+            <td>Your email address and sign-in</td>
+            <td>
+              When you sign in, Google or Microsoft gives Personally a temporary access token and your email address. Personally uses the
+              address to show which account you're sending from and to send tests to yourself. In Gmail, the token is kept in the
+              browser's session storage and is erased when you close the browser. In Outlook, Microsoft's sign-in library keeps its
+              tokens in your browser's storage for the add-in.
+            </td>
+          </tr>
+          <tr>
+            <td>Trial and usage count</td>
+            <td>
+              Personally counts how many emails you've sent today so it can apply the free trial's daily limit. In Gmail the count is kept
+              in the extension's local storage, and the date your trial started is kept by ExtensionPay with your email address. In
+              Outlook, the trial start date and daily count are kept in your mailbox's add-in settings, which Microsoft stores with your
+              mailbox.
+            </td>
+          </tr>
+          <tr>
+            <td>Payment</td>
+            <td>
+              Purchases are handled by ExtensionPay and Stripe (Gmail) or Lemon Squeezy (Outlook). They collect your name, email and
+              payment details on their own pages. We never see your card number. We receive a record of the purchase, including your
+              email address, so we can help with purchase questions and restoring purchases.
+            </td>
+          </tr>
+          <tr>
+            <td>License key (Outlook)</td>
+            <td>
+              Your license key is saved in your mailbox's add-in settings. To check it, the add-in sends the key and your mailbox address
+              to Lemon Squeezy's license service, at most every 12 hours.
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>What Personally doesn't do</h2>
+      <ul>
+        <li>It doesn't read your inbox, contacts, calendar or past emails.</li>
+        <li>It doesn't upload your spreadsheet, and it doesn't keep copies of your emails.</li>
+        <li>It doesn't use analytics, tracking pixels, advertising or cookies of its own.</li>
+        <li>It doesn't sell, rent or share your information with anyone except the services listed below that make it work.</li>
+      </ul>
+
+      <h2>Google user data</h2>
+      <p>Personally for Gmail asks Google for two permissions:</p>
+      <ul>
+        <li><code>gmail.send</code>: to send the emails you create, from your account.</li>
+        <li><code>userinfo.email</code>: to know your email address, so it can show which account is sending and send tests to you.</li>
+      </ul>
+      <p>
+        It doesn't ask for permission to read, change or delete your email. The information Personally receives from Google is used only
+        to send the emails you ask it to send, is not stored beyond your browser session, and is not transferred to anyone.
+      </p>
+      <p>
+        Personally's use and transfer to any other app of information received from Google APIs will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including
+        the Limited Use requirements.
+      </p>
+
+      <h2>Microsoft user data</h2>
+      <p>
+        Personally for Outlook asks Microsoft for <code>Mail.Send</code>, to send the emails you create from your mailbox, and
+        <code>User.Read</code>, to sign you in and read your basic profile. It doesn't ask for permission to read your mail. Microsoft
+        data is used only to send the emails you ask it to send.
+      </p>
+
+      <h2>Services Personally relies on</h2>
+      <ul>
+        <li>Google (sign-in and Gmail API): <a href="https://policies.google.com/privacy">privacy policy</a></li>
+        <li>Microsoft (sign-in, Microsoft Graph and add-in settings): <a href="https://privacy.microsoft.com/privacystatement">privacy statement</a></li>
+        <li>ExtensionPay (Gmail trial and payments): <a href="https://extensionpay.com/privacy">privacy policy</a></li>
+        <li>Stripe (card payments for Gmail): <a href="https://stripe.com/privacy">privacy policy</a></li>
+        <li>Lemon Squeezy (Outlook payments and license keys): <a href="https://www.lemonsqueezy.com/privacy">privacy policy</a></li>
+        <li>GitHub Pages (hosts this website and the Outlook add-in's files): <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a></li>
+      </ul>
+
+      <h2>Keeping and deleting your information</h2>
+      <ul>
+        <li>
+          Removing the Chrome extension deletes everything it stored in your browser. Your trial start and purchase record stay with
+          ExtensionPay so your purchase can be restored.
+        </li>
+        <li>
+          Removing the Outlook add-in leaves its small settings (trial start, today's count, license key) in your mailbox so your trial and
+          purchase carry over if you add it again. They contain no email content or spreadsheet data.
+        </li>
+        <li>
+          To stop Personally from sending as you, remove its access in your
+          <a href="https://myaccount.google.com/permissions">Google account</a> or
+          <a href="https://account.live.com/consent/Manage">Microsoft account</a> (work and school accounts:
+          <a href="https://myapps.microsoft.com">My Apps</a>).
+        </li>
+        <li>
+          To have your purchase and trial records deleted, email us at
+          <a href="mailto:personally.addin@gmail.com">personally.addin@gmail.com</a>. We'll delete them, except where we must keep sales records
+          by law.
+        </li>
+      </ul>
+
+      <h2>Security</h2>
+      <p>
+        All connections use HTTPS. Personally never sees your password: you sign in on Google's or Microsoft's own pages, and the access
+        they grant is limited to sending mail.
+      </p>
+
+      <h2>Children</h2>
+      <p>Personally isn't meant for children under 13, and we don't knowingly collect information from them.</p>
+
+      <h2>Changes</h2>
+      <p>
+        If we change this policy, we'll update the date at the top. If a change affects how your data is used, we'll say so on this page
+        before it takes effect.
+      </p>
+
+      <h2>Contact</h2>
+      <p>Questions about privacy: <a href="mailto:personally.addin@gmail.com">personally.addin@gmail.com</a>.</p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 ACooperDev · Personally</span>
+        <nav>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:personally.addin@gmail.com">Support</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

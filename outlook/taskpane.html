@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personally</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <link rel="stylesheet" href="taskpane.css" />
+  </head>
+  <body>
+    <header>
+      <div id="plan" class="plan" role="status">Loading…</div>
+      <form id="key-form" hidden>
+        <label>License key <input id="key-input" autocomplete="off" spellcheck="false" placeholder="xxxxxxxx-xxxx-…" /></label>
+        <div class="row">
+          <button type="submit" class="primary">Activate</button>
+          <button type="button" id="key-cancel">Cancel</button>
+        </div>
+      </form>
+      <p id="error" class="warn" role="alert" hidden></p>
+    </header>
+
+    <section id="not-compose" hidden>
+      <p>Open a <b>new email</b> and start Personally from its ribbon or <b>Apps</b> menu.</p>
+    </section>
+
+    <main id="app" hidden>
+      <section>
+        <div class="row">
+          <span id="account-label"></span>
+          <button id="sign-in" class="link" hidden>Sign in with Microsoft</button>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="num">1</span> Spreadsheet</h2>
+        <label class="file">
+          <input id="file" type="file" accept=".xlsx,.xls,.xlsm,.csv" />
+          <span id="file-label">Choose an Excel or CSV file…</span>
+        </label>
+        <div id="sheet-options" hidden>
+          <label id="sheet-row">Sheet <select id="sheet"></select></label>
+          <label>Email column <select id="email-col"></select></label>
+          <p id="row-summary" class="muted"></p>
+          <div class="row target">
+            <span class="muted">Insert into</span>
+            <label class="radio"><input type="radio" name="target" value="body" checked /> Body</label>
+            <label class="radio"><input type="radio" name="target" value="subject" /> Subject</label>
+          </div>
+          <div id="fields" class="chips"></div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="num">2</span> Email</h2>
+        <p class="muted">
+          Write your email in this message and click the fields above to add things like <code>{{First Name}}</code>.
+          Leave the To line empty.
+        </p>
+        <p class="muted">Add a default for blank cells with <code>{{First Name|there}}</code>.</p>
+        <button id="load-draft" class="wide">Use this message</button>
+        <p id="template-info" class="muted"></p>
+        <p id="template-warning" class="warn" hidden></p>
+      </section>
+
+      <section id="preview-section" hidden>
+        <h2><span class="num">3</span> Preview</h2>
+        <div class="row nav">
+          <button id="prev" aria-label="Previous recipient">◀</button>
+          <span id="preview-pos"></span>
+          <button id="next" aria-label="Next recipient">▶</button>
+        </div>
+        <dl class="headers">
+          <dt>To</dt>
+          <dd id="preview-to"></dd>
+          <dt>Subject</dt>
+          <dd id="preview-subject"></dd>
+        </dl>
+        <p id="preview-empty" class="warn" hidden></p>
+        <iframe id="preview-body" sandbox="" title="Email preview"></iframe>
+      </section>
+
+      <section id="send-section" hidden>
+        <h2><span class="num">4</span> Send</h2>
+        <button id="test-send" class="wide">Send this preview to me</button>
+        <button id="send" class="primary wide"></button>
+        <p id="send-hint" class="warn" hidden></p>
+        <p class="muted">Keep this pane open while sending. You can discard this draft afterwards.</p>
+        <div id="progress" hidden>
+          <progress id="progress-bar" max="1" value="0"></progress>
+          <p id="progress-text"></p>
+          <div class="row">
+            <button id="pause">Pause</button>
+            <button id="cancel">Cancel</button>
+          </div>
+        </div>
+        <div id="done" hidden>
+          <p id="done-text"></p>
+          <button id="download">Download results (.xlsx)</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="taskpane.js"></script>
+  </body>
+</html>

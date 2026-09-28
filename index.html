@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personally: mail merge from Excel for Gmail and Outlook</title>
+    <meta
+      name="description"
+      content="Send a personal email to everyone in your Excel or CSV file, from your own Gmail or Outlook account. Your spreadsheet never leaves your computer. Free for 7 days, then $5 once."
+    />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="icon-64.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="icon-180.png" />
+    <meta property="og:title" content="Personally: mail merge from Excel for Gmail and Outlook" />
+    <meta property="og:description" content="One personal email per spreadsheet row, sent from your own account. $5 once, no subscription." />
+    <meta property="og:image" content="https://acooperdev.github.io/personally/og.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="./"><img src="icon.svg" alt="" />Personally</a>
+        <nav>
+          <a class="optional" href="#how">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="wrap">
+          <div>
+            <h1>A personal email for everyone on your list.</h1>
+            <p class="lede">
+              Pick an Excel or CSV file and its columns become fields like <span class="field">{{First Name}}</span>. Personally
+              sends one email per row from your own Gmail or Outlook account. Your spreadsheet never leaves your computer.
+            </p>
+            <div class="buttons">
+              <!-- Swap these for the store links once the listings are live. -->
+              <span class="button soon">Chrome for Gmail: coming soon</span>
+              <span class="button secondary soon">Outlook: coming soon</span>
+            </div>
+            <p class="fine">Free for 7 days, then $5 once. No subscription.</p>
+          </div>
+
+          <div class="demo" aria-label="Example: three spreadsheet rows become three personalized emails">
+            <div class="sheet">
+              <table>
+                <tr>
+                  <th><span class="field">First Name</span></th>
+                  <th><span class="field">Email</span></th>
+                  <th><span class="field">Company</span></th>
+                </tr>
+                <tr>
+                  <td>Maria</td>
+                  <td>maria@example.com</td>
+                  <td>Northwind</td>
+                </tr>
+                <tr>
+                  <td>Dev</td>
+                  <td>dev@example.com</td>
+                  <td>Fabrikam</td>
+                </tr>
+                <tr>
+                  <td>Priya</td>
+                  <td>priya@example.com</td>
+                  <td>Contoso</td>
+                </tr>
+              </table>
+            </div>
+            <div class="arrow" aria-hidden="true">↓ one email per row, from you ↓</div>
+            <div class="mails">
+              <div class="mail">
+                <div class="to">To: maria@example.com</div>
+                <div class="subject">Hi <mark>Maria</mark></div>
+                Thanks for meeting with me. I'd love to show the <mark>Northwind</mark> team…
+              </div>
+              <div class="mail">
+                <div class="to">To: dev@example.com</div>
+                <div class="subject">Hi <mark>Dev</mark></div>
+                Thanks for meeting with me. I'd love to show the <mark>Fabrikam</mark> team…
+              </div>
+              <div class="mail">
+                <div class="to">To: priya@example.com</div>
+                <div class="subject">Hi <mark>Priya</mark></div>
+                Thanks for meeting with me. I'd love to show the <mark>Contoso</mark> team…
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="alt" id="how">
+        <div class="wrap">
+          <h2>How it works</h2>
+          <p class="section-lede">It works inside the Gmail or Outlook you already use, so there's nothing new to learn.</p>
+          <div class="grid">
+            <div class="card">
+              <div class="step-num">1</div>
+              <h3>Write your email</h3>
+              <p>
+                Compose as usual. Click a column name to drop in a field like <span class="field">{{Company}}</span>. For blank cells,
+                add a default: <span class="field">{{First Name|there}}</span>.
+              </p>
+            </div>
+            <div class="card">
+              <div class="step-num">2</div>
+              <h3>Pick your spreadsheet</h3>
+              <p>Choose an .xlsx, .xls or .csv file. Personally finds the email column and skips rows without a valid address.</p>
+            </div>
+            <div class="card">
+              <div class="step-num">3</div>
+              <h3>Preview, test, send</h3>
+              <p>
+                Flip through each personalized email, send yourself a test, then send them all. Download a results sheet showing what
+                went out.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="screens">
+        <div class="wrap">
+          <h2>See it in action</h2>
+          <p class="section-lede">The real Personally panel, next to the email you're writing.</p>
+          <div class="tabs">
+            <input type="radio" name="app" id="tab-gmail" checked />
+            <label for="tab-gmail">Gmail</label>
+            <input type="radio" name="app" id="tab-outlook" />
+            <label for="tab-outlook">Outlook</label>
+            <div class="shots" id="shots-gmail">
+              <figure>
+                <img src="screens/gmail-1.jpg" width="380" height="560" loading="lazy" alt="Personally for Gmail: columns become merge fields" />
+                <figcaption><strong>Columns become merge fields</strong>Pick an Excel or CSV file and click a column to add it to your message. Blank cells get a default, like <span class="field">{{First Name|there}}</span>.</figcaption>
+              </figure>
+              <figure>
+                <img src="screens/gmail-2.jpg" width="380" height="560" loading="lazy" alt="Personally for Gmail: preview every email" />
+                <figcaption><strong>Preview every email</strong>Flip through each personalized email and send yourself a test first.</figcaption>
+              </figure>
+              <figure>
+                <img src="screens/gmail-3.jpg" width="380" height="560" loading="lazy" alt="Personally for Gmail: sent from your own account" />
+                <figcaption><strong>Sent from your own account</strong>One email per row from your own account, then download a results sheet. Your spreadsheet never leaves your computer.</figcaption>
+              </figure>
+            </div>
+            <div class="shots" id="shots-outlook">
+              <figure>
+                <img src="screens/outlook-1.jpg" width="380" height="560" loading="lazy" alt="Personally for Outlook: columns become merge fields" />
+                <figcaption><strong>Columns become merge fields</strong>Pick an Excel or CSV file and click a column to add it to your message. Blank cells get a default, like <span class="field">{{First Name|there}}</span>.</figcaption>
+              </figure>
+              <figure>
+                <img src="screens/outlook-2.jpg" width="380" height="560" loading="lazy" alt="Personally for Outlook: preview every email" />
+                <figcaption><strong>Preview every email</strong>Flip through each personalized email and send yourself a test first.</figcaption>
+              </figure>
+              <figure>
+                <img src="screens/outlook-3.jpg" width="380" height="560" loading="lazy" alt="Personally for Outlook: sent from your own account" />
+                <figcaption><strong>Sent from your own account</strong>One email per row from your own account, then download a results sheet. Your spreadsheet never leaves your computer.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="alt">
+        <div class="wrap">
+          <h2>Built to stay out of your business</h2>
+          <p class="section-lede">Personally is small on purpose. It sends your email and doesn't collect anything along the way.</p>
+          <div class="grid">
+            <div class="card">
+              <h3>Your spreadsheet stays on your computer</h3>
+              <p>Your file is read inside your browser and never uploaded anywhere. We don't run servers that could store it.</p>
+            </div>
+            <div class="card">
+              <h3>Sent from you, not a mailing service</h3>
+              <p>Each email goes out from your own account, lands in your Sent folder, and replies come straight back to you.</p>
+            </div>
+            <div class="card">
+              <h3>Permission to send, nothing more</h3>
+              <p>Personally asks only for permission to send mail. It can't read your inbox, contacts or past emails.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="wrap">
+          <h2>One price, paid once</h2>
+          <p class="section-lede">Try it free for a week. If it's useful, it's $5 to keep it, with no subscription.</p>
+          <div class="pricing">
+            <div class="card">
+              <h3>Free trial</h3>
+              <div class="price">$0 <small>for 7 days</small></div>
+              <ul>
+                <li>Up to 20 emails a day</li>
+                <li>Every feature included</li>
+                <li>No card needed to start</li>
+              </ul>
+            </div>
+            <div class="card featured">
+              <h3>Personally</h3>
+              <div class="price">$5 <small>once</small></div>
+              <ul>
+                <li>No daily limit from us</li>
+                <li>Yours to keep, no subscription</li>
+                <li>Restore it any time with your email or license key</li>
+              </ul>
+            </div>
+          </div>
+          <p class="fine">Gmail and Outlook are separate apps, bought separately. Prices in US dollars; sales tax may apply.</p>
+        </div>
+      </section>
+
+      <section class="alt" id="faq">
+        <div class="wrap faq">
+          <h2>Questions</h2>
+          <details>
+            <summary>Is my spreadsheet uploaded anywhere?</summary>
+            <p>
+              No. Personally reads the file inside your browser. Only the finished emails leave your computer, and they go straight to
+              Google or Microsoft to be delivered, the same as any email you send.
+            </p>
+          </details>
+          <details>
+            <summary>What can Personally see in my account?</summary>
+            <p>
+              In Gmail it asks for permission to send email and to know your email address. It can't read your inbox. In Outlook it asks
+              to send mail as you and to read your basic profile. It reads the message you're writing only when you ask it to use it as the
+              template.
+            </p>
+          </details>
+          <details>
+            <summary>How many emails can I send?</summary>
+            <p>
+              The free trial sends up to 20 a day. After you buy, Personally has no limit of its own, but your email provider does: roughly
+              500 a day for personal Gmail, 2,000 for Google Workspace, and about 300 a day for Outlook.com. Work and school Microsoft 365
+              accounts allow up to 30 a minute. Personally paces itself to stay under these.
+            </p>
+          </details>
+          <details>
+            <summary>Will my emails end up in spam?</summary>
+            <p>
+              They're sent from your own account like any email you write, so they don't carry a mailing service's reputation. Send to
+              people who expect to hear from you, and send yourself a test first to see how the message looks.
+            </p>
+          </details>
+          <details>
+            <summary>Can I include attachments or pictures?</summary>
+            <p>
+              Not yet. Links and formatting like bold and lists come through. For images, link to them instead of pasting them into the
+              message.
+            </p>
+          </details>
+          <details>
+            <summary>How do I restore my purchase on another computer?</summary>
+            <p>
+              In Gmail, click <strong>Already paid?</strong> in the side panel and confirm your email. In Outlook, your license is saved in
+              your mailbox and follows you; if it's ever missing, enter the license key from your receipt again.
+            </p>
+          </details>
+          <details>
+            <summary>Can I get a refund?</summary>
+            <p>
+              All sales are final, so please use the free 7-day trial to make sure Personally works for you before buying. If something
+              isn't working, email <a href="mailto:personally.addin@gmail.com">personally.addin@gmail.com</a> and we'll help.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 ACooperDev · Personally</span>
+        <nav>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:personally.addin@gmail.com">Support</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
